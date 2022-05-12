@@ -28,6 +28,7 @@
             android:layout_height="wrap_content"/>
 
         <ImageView
+            android:id="@+id/img_support"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_baseline_support_agent_24"/>
@@ -95,7 +96,8 @@
         android:layout_height="wrap_content"/>
 
     <TextView
-        android:text="Lupa Password"
+        android:id="@+id/txt_lupa_password"
+        android:text="Text lupa yang baru"
         android:textColor="#02E355"
         android:layout_gravity="end"
         android:layout_width="wrap_content"

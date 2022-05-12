@@ -28,8 +28,8 @@ class MainActivity : AppCompatActivity() {
 //
 //        textLupaPassword.textAlignment = View.TEXT_ALIGNMENT_CENTER
 
-        val angkaPertama = findViewById<EditText>(R.id.edit_angka_pertama)
-        val angkaKedua = findViewById<EditText>(R.id.edit_angka_kedua)
+        val txtWarna1 = findViewById<EditText>(R.id.edit_warna_pertama)
+        val txtWarna2 = findViewById<EditText>(R.id.edit_warna_kedua)
 
         val txtHasil = findViewById<TextView>(R.id.txt_hasil)
 
@@ -37,15 +37,28 @@ class MainActivity : AppCompatActivity() {
 
         btnHitung.setOnClickListener {
 
-            val num1 = angkaPertama.text.toString().toInt()
-            val num2 = angkaKedua.text.toString().toInt()
+            val merah = "Merah"
+            val biru = "Biru"
+            val hijau = "Hijau"
 
-            val hasil = num1 + num2
+            val warna1 = txtWarna1.text.toString()
+            val warna2 = txtWarna2.text.toString()
 
-            txtHasil.text = "Hasil Perhitungan : ${hasil.toString()}"
+            val isCampuranHijau = warna1 == merah && warna2 == biru || warna1 == biru && warna2 == merah
+            val isCampuranCoklat = warna1 == "Merah" && warna2 == "Hijau" || warna1 == "Hijau" && warna2 == "Merah"
+            val isCampuranCyan = warna1 == "Biru" && warna2 == "Hijau" || warna1 == "Hijau" && warna2 == "Biru"
 
 
-            println("button hitung di click")
+            if(warna1 == merah && warna2 == biru || warna1 == biru && warna2 == merah) {
+                txtHasil.text = "Warna hasil pencampuran = $hijau"
+                println("Warna hasil pencampuran = $hijau")
+            } else if(isCampuranCoklat) {
+                txtHasil.text = "Warna hasil pencampuran = Coklat"
+                println("Warna hasil pencampuran = Coklat")
+            } else if(isCampuranCyan) {
+                txtHasil.text = "Warna hasil pencampuran = Cyan"
+                println("Warna hasil pencampuran = Cyan")
+            }
         }
 
 

@@ -10,50 +10,48 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Tampilan Penjumlahan"
+        android:text="Pencampuran 2 buah warna"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/edit_angka_pertama"
+        android:id="@+id/edit_warna_pertama"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="15"
-        android:hint="Masukkan angka pertama"
+        android:hint="Masukkan warna pertama"
         app:layout_constraintEnd_toEndOf="@+id/textView"
         app:layout_constraintStart_toStartOf="@+id/textView"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
 
     <EditText
-        android:id="@+id/edit_angka_kedua"
+        android:id="@+id/edit_warna_kedua"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="5"
-        android:hint="Masukkan angka kedua"
-        app:layout_constraintEnd_toEndOf="@+id/edit_angka_pertama"
-        app:layout_constraintStart_toStartOf="@+id/edit_angka_pertama"
-        app:layout_constraintTop_toBottomOf="@+id/edit_angka_pertama" />
+        android:hint="Masukkan warna kedua"
+        app:layout_constraintEnd_toEndOf="@+id/edit_warna_pertama"
+        app:layout_constraintStart_toStartOf="@+id/edit_warna_pertama"
+        app:layout_constraintTop_toBottomOf="@+id/edit_warna_pertama" />
 
     <Button
         android:id="@+id/btn_hitung"
-        android:text="Hitung!"
+        android:text="Campur!"
         android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_angka_kedua" />
+        app:layout_constraintTop_toBottomOf="@+id/edit_warna_kedua" />
 
 
     <TextView
         android:id="@+id/txt_hasil"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hasil Perhitungan : "
+        android:text="Hasil Warna : "
         android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

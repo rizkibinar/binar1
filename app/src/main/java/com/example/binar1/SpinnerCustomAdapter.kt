@@ -1,6 +1,7 @@
 package com.example.binar1
 
 import android.content.Context
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,17 +14,15 @@ class SpinnerCustomAdapter(private val context: Context, var dataSet: Array<Stri
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
 
-        val view: View
-        val vh: ItemHolder
-        if (convertView == null) {
-            view = inflater.inflate(R.layout.text_row_item, parent, false)
-            vh = ItemHolder(view)
-            view?.tag = vh
-        } else {
-            view = convertView
-            vh = view.tag as ItemHolder
-        }
+        val view: View = inflater.inflate(R.layout.text_row_item, parent, false)
+        val vh = ItemHolder(view)
+
         vh.label.text = dataSet[position]
+        vh.numberCount.text = position.toString()
+        if(position % 2 == 0)
+            vh.numberCount.setTextColor(Color.parseColor("#1bafad"))
+        else
+            vh.numberCount.setTextColor(Color.parseColor("#000000"))
 
         return view
     }
@@ -42,6 +41,8 @@ class SpinnerCustomAdapter(private val context: Context, var dataSet: Array<Stri
 
     private class ItemHolder(row: View?) {
         val label: TextView = row?.findViewById(R.id.text_row) as TextView
+        val numberCount: TextView = row?.findViewById(R.id.number_count) as TextView
+
 
     }
 

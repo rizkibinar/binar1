@@ -21,13 +21,14 @@ class SpinnerRecyclerActivity : AppCompatActivity() {
         val dataSet = arrayOf("SD", "SMP", "SMA", "Kuliah")
 
         // item kedua, adapter berfungsi untuk menghubungkan dataset ke tampilan UI
+        // pakai adapter bawaan android, support untuk 1 text
         val adapter: ArrayAdapter<String> = ArrayAdapter<String>(
             this@SpinnerRecyclerActivity,
             android.R.layout.simple_spinner_dropdown_item, dataSet
         )
 
         // set adapter ke spinner
-        spinner.adapter = adapter
+        spinner.adapter = SpinnerCustomAdapter(this,dataSet)
 
 
 

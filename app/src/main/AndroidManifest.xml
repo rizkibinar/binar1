@@ -10,8 +10,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Binar1">
         <activity
-            android:name=".RadioCheckActivity"
-            android:exported="true" >
+            android:name=".SpinnerRecyclerActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -19,9 +19,12 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".RadioCheckActivity"
             android:exported="true">
         </activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="true" />
     </application>
 
 </manifest>

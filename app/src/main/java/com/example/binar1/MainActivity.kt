@@ -2,6 +2,7 @@ package com.example.binar1
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.SpannableStringBuilder
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
@@ -59,6 +60,9 @@ class MainActivity : AppCompatActivity() {
                 txtHasil.text = "Warna hasil pencampuran = Cyan"
                 println("Warna hasil pencampuran = Cyan")
             }
+            btnHitung.text = "Campur Ulang"
+            txtWarna1.text = SpannableStringBuilder("Pass a string here");
+
         }
 
 

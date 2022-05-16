@@ -3,6 +3,7 @@ package com.example.binar1
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.Spinner
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -46,7 +47,9 @@ class SpinnerRecyclerActivity : AppCompatActivity() {
         // param 3 untuk membalik data
         recyclerView.layoutManager = LinearLayoutManager(this)
 
-        recyclerView.adapter = CustomAdapter(dataSet)
+        recyclerView.adapter = CustomAdapter(dataSet, onItemClick = {
+            Toast.makeText(this@SpinnerRecyclerActivity, it, Toast.LENGTH_SHORT).show()
+        })
 
 
     }

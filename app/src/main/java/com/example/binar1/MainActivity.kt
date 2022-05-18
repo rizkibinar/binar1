@@ -4,11 +4,9 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.SpannableStringBuilder
+import android.view.MotionEvent
 import android.view.View
-import android.widget.Button
-import android.widget.EditText
-import android.widget.ImageView
-import android.widget.TextView
+import android.widget.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -83,6 +81,27 @@ class MainActivity : AppCompatActivity() {
 //
 //        }
 
+        val img = findViewById<ImageView>(R.id.img2)
+
+        img.setOnClickListener {
+            Toast.makeText(this, "Gambar di click", Toast.LENGTH_SHORT).show()
+        }
+
+        img.setOnTouchListener { view, motionEvent ->
+
+            when(motionEvent.action){
+                MotionEvent.ACTION_UP -> {
+                    img.setImageResource(R.drawable.ic_baseline_support_agent_24)
+                    return@setOnTouchListener false
+                }
+                MotionEvent.ACTION_DOWN -> {
+                    img.setImageResource(R.drawable.ic_baseline_4g_mobiledata_24)
+                    return@setOnTouchListener false
+                }
+            }
+
+            return@setOnTouchListener false
+        }
 
     }
 }

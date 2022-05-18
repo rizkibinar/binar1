@@ -1,5 +1,6 @@
 package com.example.binar1
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.SpannableStringBuilder
@@ -36,6 +37,9 @@ class MainActivity : AppCompatActivity() {
 
         val btnHitung = findViewById<Button>(R.id.btn_hitung)
 
+        val btnRadio = findViewById<Button>(R.id.btn_radio)
+        val btnSpinner = findViewById<Button>(R.id.btn_spinner)
+
         btnHitung.setOnClickListener {
 
             val merah = "Merah"
@@ -65,7 +69,19 @@ class MainActivity : AppCompatActivity() {
 
         }
 
+        btnRadio.setOnClickListener {
+            val intentRadio = Intent(this@MainActivity, RadioCheckActivity::class.java)
 
+            startActivity(intentRadio)
+
+        }
+        btnSpinner.setOnClickListener {
+
+            val intentSpinner = Intent(this@MainActivity, SpinnerRecyclerActivity::class.java)
+
+            startActivity(intentSpinner)
+
+        }
 
 
     }
